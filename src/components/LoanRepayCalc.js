@@ -24,7 +24,7 @@ export default function LoanRepayCalc() {
     <Flex
       p="5"
       flexDir="column"
-      w="100%"
+      w="43.5vw"
       minW="300px"
       h={["3xl", "3xl", "sm", "sm"]}
       minH="430px"
