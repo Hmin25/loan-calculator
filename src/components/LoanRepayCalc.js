@@ -10,9 +10,11 @@ import {
   Spacer,
   HStack,
   Checkbox,
+  Center
 } from "@chakra-ui/react";
 import loanRepay from "../assets/loanRepay.png";
 import InputBarLeftEle from "../ui/InputBarLeftEle";
+import InputBarRightEle from "../ui/InputBarRightEle";
 
 export default function LoanRepayCalc() {
   const [currentNetIncome, setCurrentNetIncome] = useState(null);
@@ -52,33 +54,38 @@ export default function LoanRepayCalc() {
         <Box w="100%" h="100%">
           <InputBarLeftEle
             setCurrentData={setCurrentNetIncome}
-            title="Monthly Net Income (After deduction of EPF, Socso)"
+            title="Amount of loan"
             children="RM"
           />
-          <InputBarLeftEle
+          <InputBarRightEle
             setCurrentData={setCurrentNetIncome}
-            title="Monthly Net Income (After deduction of EPF, Socso)"
-            children="RM"
+            title="Interest rate"
+            children="%"
           />
-          <InputBarLeftEle
+          <InputBarRightEle
             setCurrentData={setCurrentNetIncome}
-            title="Monthly Net Income (After deduction of EPF, Socso)"
-            children="RM"
+            title="Repayment Perios"
+            children="months"
           />
           <Text pt="4%" fontSize={["sm", "sm", "md", "md"]} fontWeight="600">
-          Is the Loan Subsidized
+            Is the Loan Subsidized
           </Text>
           <Checkbox onChange={(e) => setIsChecked(e.target.checked)}>
             Yes
           </Checkbox>
         </Box>
+
         <VStack align="right" w="100%" h="70%" flexDir="column">
-          <Box w="100%" borderRadius="5px" h="300px" bg="#ebf6f7" />
+          <Box align="center" p="12%" w="100%" borderRadius="5px" h="300px" bg="#ebf6f7" flexDir="column">
+              <Text fontSize="2xl" fontWeight="700">Monthly payment amount</Text>
+              <br/>
+              <Text as="ins" fontSize="2xl" color="tomato">RM200.00</Text>
+          </Box>
           <Spacer />
           <Button
             bgColor="#192f60"
             color="white"
-            h="50px"
+            h="80px"
             w="100%"
             _hover={{ color: "black", bgColor: "green.200" }}
           >
