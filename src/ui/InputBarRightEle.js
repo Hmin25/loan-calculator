@@ -1,5 +1,5 @@
 import React from "react";
-import { InputGroup, InputRightElement, Input, Flex, Spacer, Text } from "@chakra-ui/react";
+import { InputGroup, InputRightAddon, Input, Flex, Spacer, Text } from "@chakra-ui/react";
 
 export default function InputBarRightEle({ setCurrentData, title, children }) {
   return (
@@ -9,13 +9,13 @@ export default function InputBarRightEle({ setCurrentData, title, children }) {
       </Text>
       <Spacer/>
       <InputGroup w="90%" minWidth="150px">
-        <InputRightElement children={children} />
         <Input
           type="number"
           onChange={(e) => {
             setCurrentData(e.target.value);
           }}
         ></Input>
+        <InputRightAddon children={children} />
       </InputGroup>
     </Flex>
   );

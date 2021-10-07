@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Flex, Text, Image, Grid, Box, Button, VStack, Spacer, HStack } from "@chakra-ui/react";
-import Loan from "../assets/loanEligible.png";
+import Mot from "../assets/mot.png";
 import InputBarLeftEle from "../ui/InputBarLeftEle";
+import InputBarRightEle from "../ui/InputBarRightEle";
 
-export default function EligibleCalc() {
+export default function MOT() {
   const [currentNetIncome, setCurrentNetIncome] = useState(null);
 
   return (
@@ -12,16 +13,16 @@ export default function EligibleCalc() {
       flexDir="column"
       w="100%"
       minW="300px"
-      h={["4xl","3xl","lg","lg"]}
+      h={["930px","4xl","lg","lg"]}
       minH="500px"
       borderRadius="10px"
       borderColor="#192f60"
       borderWidth="2px"
     >
       <HStack pl={3} spacing="5">
-        <Image w="55px" h="45px" src={Loan} />
+        <Image w="55px" h="45px" src={Mot} />
         <Text fontSize="xl" fontWeight="600">
-          Loan Eligible Calculator
+          Memorandum of Transfer (MOT) Calculator
         </Text>
       </HStack>
 
@@ -30,8 +31,8 @@ export default function EligibleCalc() {
         <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
         <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
         <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
-        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
-        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
+        <InputBarRightEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="%"/>
+        <InputBarRightEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="months"/>
         </Box>
         <VStack align="right" w="100%" h="70%" flexDir="column">
         <Box w="100%" borderRadius="5px" h="300px" bg="#ebf6f7" />

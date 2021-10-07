@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Flex, Text, Image, Grid, Box, Button, VStack, Spacer, HStack } from "@chakra-ui/react";
-import Loan from "../assets/loanEligible.png";
+import Stamp from "../assets/stamp.png";
 import InputBarLeftEle from "../ui/InputBarLeftEle";
 import InputBarRightEle from "../ui/InputBarRightEle";
 
@@ -13,32 +13,39 @@ export default function LegalFeeStampCalc() {
       flexDir="column"
       w="100%"
       minW="300px"
-      h={["4xl","3xl","lg","lg"]}
-      minH="500px"
+      h={["2xl","2xl","sm","sm"]}
+      minH="300px"
       borderRadius="10px"
-      borderColor="#192f60"
+      borderColor="none"
       borderWidth="2px"
     >
       <HStack pl={3} spacing="5">
-        <Image w="55px" h="45px" src={Loan} />
+        <Image w="45px" h="35px" src={Stamp} />
         <Text fontSize="xl" fontWeight="600">
           Legal Fees & Stamp Calculator
         </Text>
       </HStack>
 
-      <Grid overflowY="hidden" h="100%" pt={5} templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)","repeat(2, 1fr)"]} gap={8}>
+      <Grid overflowY="hidden" h="100%" pt={5} templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)","repeat(2, 1fr)"]} gap={10}>
         <Box w="100%" h="100%">
         <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
         <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
-        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
-        <InputBarRightEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="%"/>
-        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
+        <br></br>
+        <HStack overflowX="hidden">
+            <Box h="45px" w="50%" bgColor="#ebf6f7"/>
+        <Button bgColor="#192f60" color="white" h="45px" w="50%" _hover={{color:"black", bgColor:"green.200"}}>Calculate</Button>
+        </HStack>
         </Box>
-        <VStack align="right" w="100%" h="70%" flexDir="column">
-        <Box w="100%" borderRadius="5px" h="300px" bg="#ebf6f7" />
-        <Spacer/>
-        <Button bgColor="#192f60" color="white" h="50px" w="100%">Calculate</Button>
-        </VStack>
+
+        <Box w="100%" h="100%">
+        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
+        <InputBarLeftEle setCurrentData={setCurrentNetIncome} title="Monthly Net Income (After deduction of EPF, Socso)" children="RM"/>
+        <br></br>
+        <HStack overflowX="hidden">
+            <Box h="45px" w="50%" bgColor="#ebf6f7"/>
+        <Button bgColor="#192f60" color="white" h="45px" w="50%" _hover={{color:"black", bgColor:"green.200"}}>Calculate</Button>
+        </HStack>
+        </Box>
         </Grid>
     </Flex>
   );

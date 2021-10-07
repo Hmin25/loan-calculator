@@ -9,6 +9,8 @@ import {
   Spacer,
   Flex
 } from "@chakra-ui/react";
+import MOT from './components/MOT';
+import LoanRepayCalc from './components/LoanRepayCalc'
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
       <EligibleCalc/>
       <br></br>
       <LegalFeeStampCalc/>
+      <br></br>
+      <MOT/>
+      <br></br>
+      <LoanRepayCalc/>
       </Center>
     </ChakraProvider>
   );
